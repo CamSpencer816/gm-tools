@@ -8,13 +8,4 @@
     <span class="badge">{{ shop.id }}</span> {{ shop.name }}
   </li>
 </ul>
-<div *ngIf="selectedShop">
-  <h2>{{ selectedShop.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ selectedShop.id }}</div>
-  <div>
-    <label
-      >name:
-      <input [(ngModel)]="selectedShop.name" placeholder="name" />
-    </label>
-  </div>
-</div>
+<app-shop-details [shop]="selectedShop"></app-shop-details>

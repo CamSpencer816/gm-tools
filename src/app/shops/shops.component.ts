@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SHOPS } from 'src/data/shops-initializer';
 import { Shop } from 'src/models/shop';
+import { ShopService } from 'src/services/shop.service';
 
 @Component({
   selector: 'app-shops',
@@ -8,19 +8,20 @@ import { Shop } from 'src/models/shop';
   styleUrls: ['./shops.component.css'],
 })
 export class ShopsComponent implements OnInit {
-  shop: Shop = {
-    id: 1,
-    name: 'Default Shop',
-  };
-
-  shops: Shop[] = SHOPS;
+  shops: Shop[];
   selectedShop: Shop;
 
-  constructor() {}
+  constructor(private shopService: ShopService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getShops();
+  }
 
   onSelect(shop: Shop): void {
     this.selectedShop = shop;
+  }
+
+  getShops(): void {
+    this.shopService.getShops().subscribe((shops) => (this.shops = shops));
   }
 }
