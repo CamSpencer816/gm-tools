@@ -3,13 +3,12 @@ import { Shop } from 'src/models/shop';
 import { ShopService } from 'src/services/shop.service';
 
 @Component({
-  selector: 'app-shops',
-  templateUrl: './shops.component.html',
-  styleUrls: ['./shops.component.css'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
 })
-export class ShopsComponent implements OnInit {
-  shops: Shop[];
-
+export class DashboardComponent implements OnInit {
+  shops: Shop[] = [];
   constructor(private shopService: ShopService) {}
 
   ngOnInit(): void {
@@ -17,6 +16,6 @@ export class ShopsComponent implements OnInit {
   }
 
   getShops(): void {
-    this.shopService.getShops().subscribe((shops) => (this.shops = shops));
+    this.shopService.getShops().subscribe((shops) => (this.shops = shops.slice(1, 5)));
   }
 }

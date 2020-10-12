@@ -1,11 +1,8 @@
 <h2>Shops</h2>
 <ul class="shops">
-  <li
-    *ngFor="let shop of shops"
-    (click)="onSelect(shop)"
-    [class.selected]="shop === selectedShop"
-  >
-    <span class="badge">{{ shop.id }}</span> {{ shop.name }}
+  <li *ngFor="let shop of shops">
+    <a routerLink="/details/{{ shop.id }}">
+      <span class="badge">{{ shop.id }}</span> {{ shop.name }}
+    </a>
   </li>
 </ul>
-<app-shop-details [shop]="selectedShop"></app-shop-details>
