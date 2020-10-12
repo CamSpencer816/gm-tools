@@ -9,7 +9,5 @@ import { Shop } from 'src/models/shop';
 export class ShopDetailsComponent implements OnInit {
   @Input() shop: Shop;
 
-  constructor() {}
-
   ngOnInit(): void {}
 }
