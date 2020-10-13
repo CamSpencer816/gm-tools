@@ -7,7 +7,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { ShopsComponent } from './shops/shops.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,6 +1,6 @@
-import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Item } from 'src/models/item';
 import { Shop } from 'src/models/shop';
 import { ShopService } from 'src/services/shop.service';
 
@@ -11,24 +11,26 @@ import { ShopService } from 'src/services/shop.service';
 })
 export class ShopDetailsComponent implements OnInit {
   @Input() shop: Shop;
+  shopItems: Item[];
 
   constructor(
     private route: ActivatedRoute,
-    private shopService: ShopService,
-    private location: Location
+    private shopService: ShopService
   ) {}
 
   ngOnInit(): void {
     this.getShop();
+    this.getShopItems();
   }
 
   getShop(): void {
-    // TODO - Make Number conversion a bit more transparent
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.shopService.getShop(id).subscribe((shop) => (this.shop = shop));
   }
 
-  goBack(): void {
-    this.location.back();
+  getShopItems(): void {
+    this.shopService
+      .getShopItems(this.shop)
+      .subscribe((items) => (this.shopItems = items));
   }
 }

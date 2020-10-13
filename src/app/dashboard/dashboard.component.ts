@@ -16,6 +16,6 @@ export class DashboardComponent implements OnInit {
   }
 
   getShops(): void {
-    this.shopService.getShops().subscribe((shops) => (this.shops = shops.slice(1, 5)));
+    this.shopService.getShops().subscribe((shops) => (this.shops = shops.slice(0, 4)));
   }
 }

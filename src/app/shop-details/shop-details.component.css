@@ -11,7 +11,7 @@ input {
   font-size: 1em;
   padding-left: 0.4em;
 }
-button {
+h2 {
   margin-top: 20px;
   font-family: Arial;
   background-color: #eee;
@@ -20,10 +20,10 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-button:hover {
+h2:hover {
   background-color: #cfd8dc;
 }
-button:disabled {
+h2:disabled {
   background-color: #eee;
   color: #ccc;
   cursor: auto;
