@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MessagesComponent } from './messages/messages.component';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { ShopsComponent } from './shops/shops.component';
 
@@ -14,7 +13,6 @@ import { ShopsComponent } from './shops/shops.component';
     AppComponent,
     ShopsComponent,
     ShopDetailsComponent,
-    MessagesComponent,
     DashboardComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
