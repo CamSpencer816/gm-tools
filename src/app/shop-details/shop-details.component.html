@@ -1,11 +1,12 @@
 <div *ngIf="shop">
-  <h2>{{ shop.name | uppercase }} Details</h2>
+  <h2>{{ shop.name }} Details</h2>
   <div><span>ID: </span>{{ shop.id }}</div>
+  <div><span>Name: </span>{{ shop.name }}</div>
   <div>
-    <label
-      >Name:
-      <input [(ngModel)]="shop.name" placeholder="Name" />
-    </label>
+    <ul class="items">
+      <li *ngFor="let item of shopItems">
+        <span class="badge">{{ item.name }}</span> {{ item.description }}
+      </li>
+    </ul>
   </div>
 </div>
-<button (click)="goBack()">Go Back</button>

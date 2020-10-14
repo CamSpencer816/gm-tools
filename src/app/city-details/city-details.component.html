@@ -1,0 +1,12 @@
+<div *ngIf="city">
+  <h2>{{ city.name }} Details</h2>
+  <div><span>ID: </span>{{ city.id }}</div>
+  <div><span>Name: </span>{{ city.name }}</div>
+  <div>
+    <ul class="shops">
+      <li *ngFor="let shop of cityShops">
+        <span class="badge">{{ shop.id }}</span> {{ shop.name }}
+      </li>
+    </ul>
+  </div>
+</div>

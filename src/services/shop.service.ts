@@ -1,22 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { SHOPS } from 'src/data/shops-initializer';
+import { Item } from 'src/models/item';
 import { Shop } from 'src/models/shop';
-import { MessageService } from './message.service';
+import { ItemService } from './item.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShopService {
-  constructor(private messageService: MessageService) {}
+  constructor(private itemService: ItemService) {}
 
   getShop(id: number): Observable<Shop> {
-    this.messageService.add(`Shop Service: Geting Shop with ID [${id}]...`);
     return of(SHOPS.find((shop) => shop.id === id));
   }
 
   getShops(): Observable<Shop[]> {
-    this.messageService.add('Shop Service: Geting Shops...');
     return of(SHOPS);
+  }
+
+  getShopItems(shop: Shop): Observable<Item[]> {
+    const shopItems: Item[] = [];
+
+    for (const itemId of shop.itemIds) {
+      this.itemService
+        .getItem(itemId)
+        .subscribe((item) => shopItems.push(item));
+    }
+
+    return of(shopItems);
   }
 }
