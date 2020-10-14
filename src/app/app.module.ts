@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { ShopsComponent } from './shops/shops.component';
+import { CitiesComponent } from './cities/cities.component';
+import { CityDetailsComponent } from './city-details/city-details.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { ShopsComponent } from './shops/shops.component';
     ShopsComponent,
     ShopDetailsComponent,
     DashboardComponent,
+    CitiesComponent,
+    CityDetailsComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

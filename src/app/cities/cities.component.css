@@ -1,10 +1,10 @@
-.shops {
+.cities {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-.shops li {
+.cities li {
   position: relative;
   cursor: pointer;
   background-color: #eee;
@@ -13,12 +13,12 @@
   height: 1.6em;
   border-radius: 4px;
 }
-.shops li:hover {
+.cities li:hover {
   color: #607d8b;
   background-color: #ddd;
   left: 0.1em;
 }
-.shops a {
+.cities a {
   color: #333;
   text-decoration: none;
   position: relative;
@@ -26,10 +26,10 @@
   width: 250px;
 }
 
-.shops a:hover {
+.cities a:hover {
   color: #607d8b;
 }
-.shops .badge {
+.cities .badge {
   display: inline-block;
   font-size: small;
   color: white;

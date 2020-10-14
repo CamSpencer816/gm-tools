@@ -22,7 +22,7 @@ export class ShopService {
   getShopItems(shop: Shop): Observable<Item[]> {
     const shopItems: Item[] = [];
 
-    for (let itemId of shop.itemIds) {
+    for (const itemId of shop.itemIds) {
       this.itemService
         .getItem(itemId)
         .subscribe((item) => shopItems.push(item));
